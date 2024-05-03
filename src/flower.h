@@ -1,8 +1,12 @@
 #ifndef FLOWER_H_
 #define FLOWER_H_
 
-#define FLOWER_256_FG(id) "\x1b[38;5;" #id "m"
-#define FLOWER_256_BG(id) "\x1b[48;5;" #id "m"
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
+
+// colors
+#define FLOWER_256_FG(id) "\x1b[38;5;" STR(id) "m"
+#define FLOWER_256_BG(id) "\x1b[48;5;" STR(id) "m"
 
 #define FLOWER_FG_BLACK "\x1b[30m"
 #define FLOWER_BG_BLACK "\x1b[40m"
@@ -43,5 +47,10 @@
 #define FLOWER_BG_WHITE "\x1b[47m"
 #define FLOWER_FG_BRIGHTWHITE "\x1b[97m"
 #define FLOWER_BG_BRIGHTWHITE "\x1b[107m"
+
+// cursor
+#define FLOWER_CURSOR_HOME "\x1b[H"
+
+#define FLOWER_CURSOR_GOTO(line, column) "\x1b[" STR(line) ";" STR(column) "H"
 
 #endif
