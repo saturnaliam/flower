@@ -1,6 +1,9 @@
 #ifndef FLOWER_H_
 #define FLOWER_H_
 
+#define FLOWER_256_FG(id) "\x1b[38;5;" #id "m"
+#define FLOWER_256_BG(id) "\x1b[48;5;" #id "m"
+
 #define FLOWER_FG_BLACK "\x1b[30m"
 #define FLOWER_BG_BLACK "\x1b[40m"
 #define FLOWER_FG_BRIGHTBLACK "\x1b[90m"
