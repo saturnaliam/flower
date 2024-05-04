@@ -53,4 +53,46 @@
 
 #define FLOWER_CURSOR_GOTO(line, column) "\x1b[" STR(line) ";" STR(column) "H"
 
+#define FLOWER_CURSOR_UP(lines) "\x1b[" STR(lines) "A"
+#define FLOWER_CURSOR_DOWN(lines) "\x1b[" STR(lines) "B"
+#define FLOWER_CURSOR_RIGHT(columns) "\x1b[" STR(columns) "C"
+#define FLOWER_CURSOR_LEFT(columns) "\x1b[" STR(columns) "D"
+
+// TODO ESC[#E moves to beginning of next line, # lines down
+// TODO ESC[#F moves to beginning of previous line, # lines up
+
+#define FLOWER_CURSOR_COLUMN(column) "\x1b[" STR(column) "G"
+
+#define FLOWER_CURSOR_SAVE_SCO() "\x1b[s"
+#define FLOWER_CURSOR_RESTORE_SCO() "\x1b[u"
+
+#define FLOWER_SLOW_BLINK "\x1b[5m"
+// NOTE this is rarely supported!!
+#define FLOWER_RAPID_BLINK "\x1b[6m"
+#define FLOWER_NO_BLINK "\x1b[25m"
+
+// different text modes
+#define FLOWER_RESET_ALL_MODES "\x1b[0m"
+
+#define FLOWER_BOLD_MODE "\x1b[1m"
+
+#define FLOWER_INTENSITY_NORMAL "\x1b[22m"
+
+#define FLOWER_FAINT_MODE "\x1b[2m"
+
+#define FLOWER_ITALIC_MODE "\x1b[3m"
+#define FLOWER_ITALIC_MODE_DISABLE "\x1b[23m"
+
+#define FLOWER_UNDERLINE_MODE "\x1b[4m"
+#define FLOWER_UNDERLINE_MODE_DISABLE "\x1b[24m"
+
+#define FLOWER_INVERT_MODE "\x1b[7m"
+#define FLOWER_INVERT_MODE_DISABLE "\x1b[27m"
+
+#define FLOWER_HIDDEN_MODE "\x1b[8m"
+#define FLOWER_HIDDEN_MODE_DISABLE "\x1b[28m"
+
+#define FLOWER_CROSSED_MODE "\x1b[9m"
+#define FLOWER_CROSSED_MODE_DISABLE "\x1b[29m"
+
 #endif
