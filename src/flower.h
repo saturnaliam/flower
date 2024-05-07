@@ -112,4 +112,25 @@
 
 #define FLOWER_ERASE_LINE_FULL "\x1b[2K"
 
+// getting terminal width/height !!
+#define FLOWER_GET_TERMINAL_DIMENSIONS(win) ioctl(0, TIOCGWINSZ, &win)
+
+// NOTE please dont use this on your own !! this is just for the height and
+// width macros
+#define FLOWER_GET_TERMINAL_FIELD(var, field)                                  \
+  do {                                                                         \
+    struct winsize w;                                                          \
+    FLOWER_GET_TERMINAL_DIMENSIONS(w);                                         \
+    *var = w.field;                                                            \
+  } while (0)
+
+// these just call the above function but with different fields
+#define FLOWER_GET_TERMINAL_ROWS(rows) FLOWER_GET_TERMINAL_FIELD(rows, ws_row)
+
+#define FLOWER_GET_TERMINAL_COLS(cols) FLOWER_GET_TERMINAL_FIELD(cols, ws_col)
+
+#define FLOWER_GET_TERMINAL_X(x) FLOWER_GET_TERMINAL_FIELD(x, ws_xpixel)
+
+#define FLOWER_GET_TERMINAL_Y(y) FLOWER_GET_TERMINAL_FIELD(y, ws_ypixel)
+
 #endif
