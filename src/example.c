@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int main() {
+  FLOWER_TEST_256_COLOR();
   printf("%sBLACK FG\x1b[0m | ", FLOWER_FG_BLACK);
   printf("%sBLACK BG\x1b[0m | ", FLOWER_BG_BLACK);
   printf("%sBRIGHT BLACK FG\x1b[0m | ", FLOWER_FG_BRIGHTBLACK);

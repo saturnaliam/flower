@@ -95,4 +95,21 @@
 #define FLOWER_CROSSED_MODE "\x1b[9m"
 #define FLOWER_CROSSED_MODE_DISABLE "\x1b[29m"
 
+// erasing stuff
+#define FLOWER_ERASE_IN_DISPLAY "\x1b[J"
+#define FLOWER_ERASE_TO_SCREEN_END "\x1b[0J"
+
+#define FLOWER_ERASE_TO_SCREEN_BEGINNING "\x1b[1J"
+
+#define FLOWER_ERASE_FULL "\x1b[2J"
+
+#define FLOWER_ERASE_SAVED "\x1b[3J"
+
+#define FLOWER_ERASE_IN_LINE "\x1b[K"
+#define FLOWER_ERASE_TO_LINE_END "\x1b[0K"
+
+#define FLOWER_ERASE_LINE_TO_CURSOR "\x1b[1K"
+
+#define FLOWER_ERASE_LINE_FULL "\x1b[2K"
+
 #endif
